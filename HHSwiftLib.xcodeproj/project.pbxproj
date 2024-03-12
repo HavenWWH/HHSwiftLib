@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		04A7E9672BA029BC00B93E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9662BA029BC00B93E92 /* AppDelegate.swift */; };
-		04A7E9692BA029BC00B93E92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9682BA029BC00B93E92 /* SceneDelegate.swift */; };
 		04A7E96B2BA029BC00B93E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E96A2BA029BC00B93E92 /* ViewController.swift */; };
 		04A7E96E2BA029BC00B93E92 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 04A7E96D2BA029BC00B93E92 /* Base */; };
 		04A7E9702BA029BE00B93E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A7E96F2BA029BE00B93E92 /* Assets.xcassets */; };
@@ -16,6 +15,48 @@
 		04A7E97E2BA029BE00B93E92 /* HHSwiftLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E97D2BA029BE00B93E92 /* HHSwiftLibTests.swift */; };
 		04A7E9882BA029BE00B93E92 /* HHSwiftLibUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9872BA029BE00B93E92 /* HHSwiftLibUITests.swift */; };
 		04A7E98A2BA029BE00B93E92 /* HHSwiftLibUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9892BA029BE00B93E92 /* HHSwiftLibUITestsLaunchTests.swift */; };
+		04A7E9BF2BA031EC00B93E92 /* HHTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9B42BA031EC00B93E92 /* HHTabBar.swift */; };
+		04A7E9C02BA031EC00B93E92 /* HHTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9B52BA031EC00B93E92 /* HHTabBarButton.swift */; };
+		04A7E9C12BA031EC00B93E92 /* HHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9B62BA031EC00B93E92 /* HHTabBarController.swift */; };
+		04A7E9C22BA031EC00B93E92 /* HHTabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9B72BA031EC00B93E92 /* HHTabbarItem.swift */; };
+		04A7E9C32BA031EC00B93E92 /* HHDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9B92BA031EC00B93E92 /* HHDefine.swift */; };
+		04A7E9C42BA031EC00B93E92 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A7E9BC2BA031EC00B93E92 /* Images.xcassets */; };
+		04A7E9CF2BA0334600B93E92 /* HHLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9C52BA0334600B93E92 /* HHLoader.swift */; };
+		04A7E9D02BA0334600B93E92 /* HHSandBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9C62BA0334600B93E92 /* HHSandBox.swift */; };
+		04A7E9D12BA0334600B93E92 /* HHVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9C72BA0334600B93E92 /* HHVersion.swift */; };
+		04A7E9D22BA0334600B93E92 /* HHDelayClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9C82BA0334600B93E92 /* HHDelayClosure.swift */; };
+		04A7E9D32BA0334600B93E92 /* HHCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9C92BA0334600B93E92 /* HHCoordinator.swift */; };
+		04A7E9D42BA0334600B93E92 /* HHAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9CA2BA0334600B93E92 /* HHAppState.swift */; };
+		04A7E9D52BA0334600B93E92 /* HHMediaUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9CB2BA0334600B93E92 /* HHMediaUtils.swift */; };
+		04A7E9D62BA0334600B93E92 /* HHDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9CC2BA0334600B93E92 /* HHDevice.swift */; };
+		04A7E9D72BA0334600B93E92 /* HHStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9CD2BA0334600B93E92 /* HHStore.swift */; };
+		04A7E9D82BA0334600B93E92 /* HHThen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9CE2BA0334600B93E92 /* HHThen.swift */; };
+		04A7E9DD2BA0359D00B93E92 /* HHWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9D92BA0359D00B93E92 /* HHWebViewController.swift */; };
+		04A7E9DE2BA0359D00B93E92 /* HHWatermarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9DA2BA0359D00B93E92 /* HHWatermarkView.swift */; };
+		04A7E9DF2BA0359D00B93E92 /* HHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9DB2BA0359D00B93E92 /* HHBaseViewController.swift */; };
+		04A7E9E02BA0359D00B93E92 /* HHBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9DC2BA0359D00B93E92 /* HHBaseNavigationController.swift */; };
+		04A7E9F42BA0374000B93E92 /* String+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E12BA0374000B93E92 /* String+HHExtensions.swift */; };
+		04A7E9F52BA0374000B93E92 /* UIView+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E22BA0374000B93E92 /* UIView+HHExtensions.swift */; };
+		04A7E9F62BA0374000B93E92 /* UIImage+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E32BA0374000B93E92 /* UIImage+HHExtensions.swift */; };
+		04A7E9F72BA0374000B93E92 /* UIAlertController+HHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E42BA0374000B93E92 /* UIAlertController+HHExtension.swift */; };
+		04A7E9F82BA0374000B93E92 /* Array+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E52BA0374000B93E92 /* Array+HHExtensions.swift */; };
+		04A7E9F92BA0374000B93E92 /* NSObject+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E62BA0374000B93E92 /* NSObject+HHExtensions.swift */; };
+		04A7E9FA2BA0374000B93E92 /* UINavigationController+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E72BA0374000B93E92 /* UINavigationController+HHExtensions.swift */; };
+		04A7E9FB2BA0374000B93E92 /* UIButton+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E82BA0374000B93E92 /* UIButton+HHExtensions.swift */; };
+		04A7E9FC2BA0374000B93E92 /* UIApplication+HHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9E92BA0374000B93E92 /* UIApplication+HHExtension.swift */; };
+		04A7E9FD2BA0374000B93E92 /* StatusBar+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9EA2BA0374000B93E92 /* StatusBar+HHExtensions.swift */; };
+		04A7E9FE2BA0374000B93E92 /* UINavigationBar+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9EB2BA0374000B93E92 /* UINavigationBar+HHExtensions.swift */; };
+		04A7E9FF2BA0374000B93E92 /* UIViewController+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9EC2BA0374000B93E92 /* UIViewController+HHExtensions.swift */; };
+		04A7EA002BA0374000B93E92 /* Dictionary+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9ED2BA0374000B93E92 /* Dictionary+HHExtensions.swift */; };
+		04A7EA012BA0374000B93E92 /* Data+HHExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9EE2BA0374000B93E92 /* Data+HHExtension.swift */; };
+		04A7EA022BA0374000B93E92 /* CGRect+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9EF2BA0374000B93E92 /* CGRect+HHExtensions.swift */; };
+		04A7EA032BA0374000B93E92 /* CALayer+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9F02BA0374000B93E92 /* CALayer+HHExtensions.swift */; };
+		04A7EA042BA0374000B93E92 /* UserDefault+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9F12BA0374000B93E92 /* UserDefault+HHExtensions.swift */; };
+		04A7EA052BA0374000B93E92 /* UIFont+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9F22BA0374000B93E92 /* UIFont+HHExtensions.swift */; };
+		04A7EA062BA0374000B93E92 /* UIColor+HHExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9F32BA0374000B93E92 /* UIColor+HHExtensions.swift */; };
+		04A7EA092BA044DC00B93E92 /* HHCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7EA072BA044DC00B93E92 /* HHCustomNavigationBar.swift */; };
+		04A7EA0C2BA045F000B93E92 /* HHLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7EA0B2BA045F000B93E92 /* HHLog.swift */; };
+		DA0B599218ABE7EA069EB2FF /* Pods_HHSwiftLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D1C124C2A502AC69A7D334 /* Pods_HHSwiftLib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +79,6 @@
 /* Begin PBXFileReference section */
 		04A7E9632BA029BC00B93E92 /* HHSwiftLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHSwiftLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A7E9662BA029BC00B93E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04A7E9682BA029BC00B93E92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04A7E96A2BA029BC00B93E92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04A7E96D2BA029BC00B93E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04A7E96F2BA029BE00B93E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +89,50 @@
 		04A7E9832BA029BE00B93E92 /* HHSwiftLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHSwiftLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A7E9872BA029BE00B93E92 /* HHSwiftLibUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSwiftLibUITests.swift; sourceTree = "<group>"; };
 		04A7E9892BA029BE00B93E92 /* HHSwiftLibUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHSwiftLibUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04A7E9B42BA031EC00B93E92 /* HHTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHTabBar.swift; sourceTree = "<group>"; };
+		04A7E9B52BA031EC00B93E92 /* HHTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHTabBarButton.swift; sourceTree = "<group>"; };
+		04A7E9B62BA031EC00B93E92 /* HHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHTabBarController.swift; sourceTree = "<group>"; };
+		04A7E9B72BA031EC00B93E92 /* HHTabbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHTabbarItem.swift; sourceTree = "<group>"; };
+		04A7E9B92BA031EC00B93E92 /* HHDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDefine.swift; sourceTree = "<group>"; };
+		04A7E9BC2BA031EC00B93E92 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		04A7E9C52BA0334600B93E92 /* HHLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLoader.swift; sourceTree = "<group>"; };
+		04A7E9C62BA0334600B93E92 /* HHSandBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHSandBox.swift; sourceTree = "<group>"; };
+		04A7E9C72BA0334600B93E92 /* HHVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHVersion.swift; sourceTree = "<group>"; };
+		04A7E9C82BA0334600B93E92 /* HHDelayClosure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDelayClosure.swift; sourceTree = "<group>"; };
+		04A7E9C92BA0334600B93E92 /* HHCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHCoordinator.swift; sourceTree = "<group>"; };
+		04A7E9CA2BA0334600B93E92 /* HHAppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHAppState.swift; sourceTree = "<group>"; };
+		04A7E9CB2BA0334600B93E92 /* HHMediaUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHMediaUtils.swift; sourceTree = "<group>"; };
+		04A7E9CC2BA0334600B93E92 /* HHDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHDevice.swift; sourceTree = "<group>"; };
+		04A7E9CD2BA0334600B93E92 /* HHStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHStore.swift; sourceTree = "<group>"; };
+		04A7E9CE2BA0334600B93E92 /* HHThen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHThen.swift; sourceTree = "<group>"; };
+		04A7E9D92BA0359D00B93E92 /* HHWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHWebViewController.swift; sourceTree = "<group>"; };
+		04A7E9DA2BA0359D00B93E92 /* HHWatermarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHWatermarkView.swift; sourceTree = "<group>"; };
+		04A7E9DB2BA0359D00B93E92 /* HHBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHBaseViewController.swift; sourceTree = "<group>"; };
+		04A7E9DC2BA0359D00B93E92 /* HHBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHBaseNavigationController.swift; sourceTree = "<group>"; };
+		04A7E9E12BA0374000B93E92 /* String+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9E22BA0374000B93E92 /* UIView+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9E32BA0374000B93E92 /* UIImage+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9E42BA0374000B93E92 /* UIAlertController+HHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+HHExtension.swift"; sourceTree = "<group>"; };
+		04A7E9E52BA0374000B93E92 /* Array+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9E62BA0374000B93E92 /* NSObject+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9E72BA0374000B93E92 /* UINavigationController+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9E82BA0374000B93E92 /* UIButton+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9E92BA0374000B93E92 /* UIApplication+HHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+HHExtension.swift"; sourceTree = "<group>"; };
+		04A7E9EA2BA0374000B93E92 /* StatusBar+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StatusBar+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9EB2BA0374000B93E92 /* UINavigationBar+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9EC2BA0374000B93E92 /* UIViewController+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9ED2BA0374000B93E92 /* Dictionary+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9EE2BA0374000B93E92 /* Data+HHExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+HHExtension.swift"; sourceTree = "<group>"; };
+		04A7E9EF2BA0374000B93E92 /* CGRect+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9F02BA0374000B93E92 /* CALayer+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9F12BA0374000B93E92 /* UserDefault+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefault+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9F22BA0374000B93E92 /* UIFont+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7E9F32BA0374000B93E92 /* UIColor+HHExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HHExtensions.swift"; sourceTree = "<group>"; };
+		04A7EA072BA044DC00B93E92 /* HHCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHCustomNavigationBar.swift; sourceTree = "<group>"; };
+		04A7EA0B2BA045F000B93E92 /* HHLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHLog.swift; sourceTree = "<group>"; };
+		35060268540266A22D868D5A /* Pods-HHSwiftLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHSwiftLib.debug.xcconfig"; path = "Target Support Files/Pods-HHSwiftLib/Pods-HHSwiftLib.debug.xcconfig"; sourceTree = "<group>"; };
+		5B3EF6789A74650E0FB01E4F /* Pods-HHSwiftLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHSwiftLib.release.xcconfig"; path = "Target Support Files/Pods-HHSwiftLib/Pods-HHSwiftLib.release.xcconfig"; sourceTree = "<group>"; };
+		F7D1C124C2A502AC69A7D334 /* Pods_HHSwiftLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HHSwiftLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0B599218ABE7EA069EB2FF /* Pods_HHSwiftLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +168,8 @@
 				04A7E97C2BA029BE00B93E92 /* HHSwiftLibTests */,
 				04A7E9862BA029BE00B93E92 /* HHSwiftLibUITests */,
 				04A7E9642BA029BC00B93E92 /* Products */,
+				F171216A889127F2C55F6442 /* Pods */,
+				D2EF506413ECE0AD4B29A994 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +186,8 @@
 		04A7E9652BA029BC00B93E92 /* HHSwiftLib */ = {
 			isa = PBXGroup;
 			children = (
+				04A7E9BE2BA031EC00B93E92 /* Sources */,
 				04A7E9662BA029BC00B93E92 /* AppDelegate.swift */,
-				04A7E9682BA029BC00B93E92 /* SceneDelegate.swift */,
 				04A7E96A2BA029BC00B93E92 /* ViewController.swift */,
 				04A7E96C2BA029BC00B93E92 /* Main.storyboard */,
 				04A7E96F2BA029BE00B93E92 /* Assets.xcassets */,
@@ -127,6 +214,119 @@
 			path = HHSwiftLibUITests;
 			sourceTree = "<group>";
 		};
+		04A7E9B02BA031EC00B93E92 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				04A7EA072BA044DC00B93E92 /* HHCustomNavigationBar.swift */,
+				04A7E9DC2BA0359D00B93E92 /* HHBaseNavigationController.swift */,
+				04A7E9DB2BA0359D00B93E92 /* HHBaseViewController.swift */,
+				04A7E9DA2BA0359D00B93E92 /* HHWatermarkView.swift */,
+				04A7E9D92BA0359D00B93E92 /* HHWebViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		04A7E9B12BA031EC00B93E92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04A7E9E52BA0374000B93E92 /* Array+HHExtensions.swift */,
+				04A7E9F02BA0374000B93E92 /* CALayer+HHExtensions.swift */,
+				04A7E9EF2BA0374000B93E92 /* CGRect+HHExtensions.swift */,
+				04A7E9EE2BA0374000B93E92 /* Data+HHExtension.swift */,
+				04A7E9ED2BA0374000B93E92 /* Dictionary+HHExtensions.swift */,
+				04A7E9E62BA0374000B93E92 /* NSObject+HHExtensions.swift */,
+				04A7E9EA2BA0374000B93E92 /* StatusBar+HHExtensions.swift */,
+				04A7E9E12BA0374000B93E92 /* String+HHExtensions.swift */,
+				04A7E9E42BA0374000B93E92 /* UIAlertController+HHExtension.swift */,
+				04A7E9E92BA0374000B93E92 /* UIApplication+HHExtension.swift */,
+				04A7E9E82BA0374000B93E92 /* UIButton+HHExtensions.swift */,
+				04A7E9F32BA0374000B93E92 /* UIColor+HHExtensions.swift */,
+				04A7E9F22BA0374000B93E92 /* UIFont+HHExtensions.swift */,
+				04A7E9E32BA0374000B93E92 /* UIImage+HHExtensions.swift */,
+				04A7E9EB2BA0374000B93E92 /* UINavigationBar+HHExtensions.swift */,
+				04A7E9E72BA0374000B93E92 /* UINavigationController+HHExtensions.swift */,
+				04A7E9E22BA0374000B93E92 /* UIView+HHExtensions.swift */,
+				04A7E9EC2BA0374000B93E92 /* UIViewController+HHExtensions.swift */,
+				04A7E9F12BA0374000B93E92 /* UserDefault+HHExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04A7E9B82BA031EC00B93E92 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				04A7E9B42BA031EC00B93E92 /* HHTabBar.swift */,
+				04A7E9B52BA031EC00B93E92 /* HHTabBarButton.swift */,
+				04A7E9B62BA031EC00B93E92 /* HHTabBarController.swift */,
+				04A7E9B72BA031EC00B93E92 /* HHTabbarItem.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		04A7E9BA2BA031EC00B93E92 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				04A7EA0B2BA045F000B93E92 /* HHLog.swift */,
+				04A7E9CA2BA0334600B93E92 /* HHAppState.swift */,
+				04A7E9C92BA0334600B93E92 /* HHCoordinator.swift */,
+				04A7E9C82BA0334600B93E92 /* HHDelayClosure.swift */,
+				04A7E9CC2BA0334600B93E92 /* HHDevice.swift */,
+				04A7E9C52BA0334600B93E92 /* HHLoader.swift */,
+				04A7E9CB2BA0334600B93E92 /* HHMediaUtils.swift */,
+				04A7E9C62BA0334600B93E92 /* HHSandBox.swift */,
+				04A7E9CD2BA0334600B93E92 /* HHStore.swift */,
+				04A7E9CE2BA0334600B93E92 /* HHThen.swift */,
+				04A7E9C72BA0334600B93E92 /* HHVersion.swift */,
+				04A7E9B92BA031EC00B93E92 /* HHDefine.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		04A7E9BB2BA031EC00B93E92 /* HHSwiftLib */ = {
+			isa = PBXGroup;
+			children = (
+				04A7E9B02BA031EC00B93E92 /* Base */,
+				04A7E9B12BA031EC00B93E92 /* Extensions */,
+				04A7E9B82BA031EC00B93E92 /* TabBar */,
+				04A7E9BA2BA031EC00B93E92 /* Utils */,
+			);
+			path = HHSwiftLib;
+			sourceTree = "<group>";
+		};
+		04A7E9BD2BA031EC00B93E92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04A7E9BC2BA031EC00B93E92 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04A7E9BE2BA031EC00B93E92 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				04A7E9BB2BA031EC00B93E92 /* HHSwiftLib */,
+				04A7E9BD2BA031EC00B93E92 /* Resources */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		D2EF506413ECE0AD4B29A994 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7D1C124C2A502AC69A7D334 /* Pods_HHSwiftLib.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F171216A889127F2C55F6442 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35060268540266A22D868D5A /* Pods-HHSwiftLib.debug.xcconfig */,
+				5B3EF6789A74650E0FB01E4F /* Pods-HHSwiftLib.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +334,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04A7E98D2BA029BE00B93E92 /* Build configuration list for PBXNativeTarget "HHSwiftLib" */;
 			buildPhases = (
+				55D2F357B42658FB6171B8DE /* [CP] Check Pods Manifest.lock */,
 				04A7E95F2BA029BC00B93E92 /* Sources */,
 				04A7E9602BA029BC00B93E92 /* Frameworks */,
 				04A7E9612BA029BC00B93E92 /* Resources */,
+				476B7E7F11E531730AA8F272 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,7 +409,7 @@
 				};
 			};
 			buildConfigurationList = 04A7E95E2BA029BC00B93E92 /* Build configuration list for PBXProject "HHSwiftLib" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -232,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A7E9702BA029BE00B93E92 /* Assets.xcassets in Resources */,
+				04A7E9C42BA031EC00B93E92 /* Images.xcassets in Resources */,
 				04A7E9732BA029BE00B93E92 /* Base in Resources */,
 				04A7E96E2BA029BC00B93E92 /* Base in Resources */,
 			);
@@ -253,14 +456,95 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		476B7E7F11E531730AA8F272 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HHSwiftLib/Pods-HHSwiftLib-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HHSwiftLib/Pods-HHSwiftLib-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HHSwiftLib/Pods-HHSwiftLib-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55D2F357B42658FB6171B8DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HHSwiftLib-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04A7E95F2BA029BC00B93E92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A7E9D62BA0334600B93E92 /* HHDevice.swift in Sources */,
+				04A7E9FD2BA0374000B93E92 /* StatusBar+HHExtensions.swift in Sources */,
+				04A7E9DD2BA0359D00B93E92 /* HHWebViewController.swift in Sources */,
+				04A7E9D52BA0334600B93E92 /* HHMediaUtils.swift in Sources */,
+				04A7E9D02BA0334600B93E92 /* HHSandBox.swift in Sources */,
+				04A7E9CF2BA0334600B93E92 /* HHLoader.swift in Sources */,
+				04A7EA052BA0374000B93E92 /* UIFont+HHExtensions.swift in Sources */,
+				04A7EA042BA0374000B93E92 /* UserDefault+HHExtensions.swift in Sources */,
+				04A7E9FA2BA0374000B93E92 /* UINavigationController+HHExtensions.swift in Sources */,
+				04A7E9D42BA0334600B93E92 /* HHAppState.swift in Sources */,
+				04A7E9D72BA0334600B93E92 /* HHStore.swift in Sources */,
+				04A7E9DF2BA0359D00B93E92 /* HHBaseViewController.swift in Sources */,
+				04A7E9C12BA031EC00B93E92 /* HHTabBarController.swift in Sources */,
+				04A7EA002BA0374000B93E92 /* Dictionary+HHExtensions.swift in Sources */,
+				04A7E9F62BA0374000B93E92 /* UIImage+HHExtensions.swift in Sources */,
+				04A7E9BF2BA031EC00B93E92 /* HHTabBar.swift in Sources */,
+				04A7E9FC2BA0374000B93E92 /* UIApplication+HHExtension.swift in Sources */,
+				04A7E9C22BA031EC00B93E92 /* HHTabbarItem.swift in Sources */,
 				04A7E96B2BA029BC00B93E92 /* ViewController.swift in Sources */,
+				04A7E9F92BA0374000B93E92 /* NSObject+HHExtensions.swift in Sources */,
+				04A7E9F72BA0374000B93E92 /* UIAlertController+HHExtension.swift in Sources */,
+				04A7E9D32BA0334600B93E92 /* HHCoordinator.swift in Sources */,
+				04A7E9F52BA0374000B93E92 /* UIView+HHExtensions.swift in Sources */,
+				04A7E9D12BA0334600B93E92 /* HHVersion.swift in Sources */,
+				04A7EA092BA044DC00B93E92 /* HHCustomNavigationBar.swift in Sources */,
+				04A7E9F42BA0374000B93E92 /* String+HHExtensions.swift in Sources */,
+				04A7EA0C2BA045F000B93E92 /* HHLog.swift in Sources */,
 				04A7E9672BA029BC00B93E92 /* AppDelegate.swift in Sources */,
-				04A7E9692BA029BC00B93E92 /* SceneDelegate.swift in Sources */,
+				04A7E9FE2BA0374000B93E92 /* UINavigationBar+HHExtensions.swift in Sources */,
+				04A7E9DE2BA0359D00B93E92 /* HHWatermarkView.swift in Sources */,
+				04A7E9C02BA031EC00B93E92 /* HHTabBarButton.swift in Sources */,
+				04A7EA062BA0374000B93E92 /* UIColor+HHExtensions.swift in Sources */,
+				04A7EA032BA0374000B93E92 /* CALayer+HHExtensions.swift in Sources */,
+				04A7E9D82BA0334600B93E92 /* HHThen.swift in Sources */,
+				04A7E9FB2BA0374000B93E92 /* UIButton+HHExtensions.swift in Sources */,
+				04A7E9E02BA0359D00B93E92 /* HHBaseNavigationController.swift in Sources */,
+				04A7EA012BA0374000B93E92 /* Data+HHExtension.swift in Sources */,
+				04A7E9FF2BA0374000B93E92 /* UIViewController+HHExtensions.swift in Sources */,
+				04A7E9C32BA031EC00B93E92 /* HHDefine.swift in Sources */,
+				04A7E9D22BA0334600B93E92 /* HHDelayClosure.swift in Sources */,
+				04A7E9F82BA0374000B93E92 /* Array+HHExtensions.swift in Sources */,
+				04A7EA022BA0374000B93E92 /* CGRect+HHExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -425,7 +709,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -437,19 +721,22 @@
 		};
 		04A7E98E2BA029BE00B93E92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35060268540266A22D868D5A /* Pods-HHSwiftLib.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QMXAZ7256M;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HHSwiftLib/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,19 +752,22 @@
 		};
 		04A7E98F2BA029BE00B93E92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B3EF6789A74650E0FB01E4F /* Pods-HHSwiftLib.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QMXAZ7256M;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HHSwiftLib/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
