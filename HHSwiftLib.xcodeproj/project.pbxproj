@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A0E99A2BA7EB9600157393 /* UIView+HHCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0E9992BA7EB9600157393 /* UIView+HHCreate.swift */; };
 		04A7E9672BA029BC00B93E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E9662BA029BC00B93E92 /* AppDelegate.swift */; };
 		04A7E96B2BA029BC00B93E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7E96A2BA029BC00B93E92 /* ViewController.swift */; };
 		04A7E96E2BA029BC00B93E92 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 04A7E96D2BA029BC00B93E92 /* Base */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A0E9992BA7EB9600157393 /* UIView+HHCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+HHCreate.swift"; sourceTree = "<group>"; };
 		04A7E9632BA029BC00B93E92 /* HHSwiftLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHSwiftLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A7E9662BA029BC00B93E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A7E96A2BA029BC00B93E92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A0E9982BA7EB4000157393 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				04A0E9992BA7EB9600157393 /* UIView+HHCreate.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
 		04A7E95A2BA029BC00B93E92 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +295,7 @@
 		04A7E9BB2BA031EC00B93E92 /* HHSwiftLib */ = {
 			isa = PBXGroup;
 			children = (
+				04A0E9982BA7EB4000157393 /* Create */,
 				04A7E9B02BA031EC00B93E92 /* Base */,
 				04A7E9B12BA031EC00B93E92 /* Extensions */,
 				04A7E9B82BA031EC00B93E92 /* TabBar */,
@@ -544,6 +555,7 @@
 				04A7E9C32BA031EC00B93E92 /* HHDefine.swift in Sources */,
 				04A7E9D22BA0334600B93E92 /* HHDelayClosure.swift in Sources */,
 				04A7E9F82BA0374000B93E92 /* Array+HHExtensions.swift in Sources */,
+				04A0E99A2BA7EB9600157393 /* UIView+HHCreate.swift in Sources */,
 				04A7EA022BA0374000B93E92 /* CGRect+HHExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

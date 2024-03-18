@@ -89,3 +89,9 @@ public var AppBuildNumber: String? {
 public var AppVersion: String? {
     return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 }
+
+/// 本地化
+public func APP_LocalizedStr(_ name : String) ->String {
+    
+    return NSLocalizedString(name, comment: "");
+}
