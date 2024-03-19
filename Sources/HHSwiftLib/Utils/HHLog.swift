@@ -280,12 +280,30 @@ private extension String {
             return "unicode转码失败"
         }
         var returnStr:String = ""
-        do {
-            returnStr = try PropertyListSerialization.propertyList(from: tempData, options: [.mutableContainers], format: nil) as! String
-        } catch {
-            print(error)
+        if  let tempReturnStr = String(data: tempData, encoding: .utf8) {
+            returnStr = tempReturnStr
         }
+//        do {
+//            let jsonObject = try JSONSerialization.jsonObject(with: tempData, options: [])
+//            if let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted]) {
+//                if let jsonString = String(data: jsonData, encoding: .utf8) {
+//                    print(jsonString)
+//                    returnStr = jsonString
+//                }
+//            }
+//        } catch {
+//            print(error)
+//        }
+        
+//        do {
+//            let returnStr1 = String(data: tempData, encoding: .utf8)!
+//            returnStr = try PropertyListSerialization.propertyList(from: tempData, options: [.mutableContainers], format: nil) as! String
+//        } catch {
+//            
+//            print(error)
+//        }
         return returnStr.replacingOccurrences(of: "\\r\\n", with: "\n")
     }
 }
+
 
