@@ -152,6 +152,140 @@ extension UIImage {
         return hash.reduce("") { $0 + String(format:"%02x", $1) }
     }
     
+    /// 是否黑白图像
+    public func checkImageIsBW() -> Bool {
+        
+        guard let imageRef = self.cgImage, let cgImageRef = imageRef.dataProvider,
+              let cfData = cgImageRef.data else {
+            return false
+        }
+        
+        let data = cfData as Data
+        let pixels = [UInt8](data)
+        
+        let threshold: Int = 10 // 定义一个灰度阈值
+        var isBW = true
+        
+        for i in stride(from: 0, to: data.count, by: 4) {
+            let red = pixels[i]
+            let green = pixels[i + 1]
+            let blue = pixels[i + 2]
+            
+            // 检查单个通道是否远离平均值。灰色像素的 RGB 值非常接近。
+            let average = (Int(red) + Int(green) + Int(blue)) / 3
+            if abs(average - Int(red)) >= threshold ||
+                abs(average - Int(green)) >= threshold ||
+                abs(average - Int(blue)) >= threshold {
+                // 可能是彩色像素
+                isBW = false
+                break
+            }
+        }
+        
+        // TODO: 是否需要释放
+        
+//        CFRelease(cfData)
+        return isBW
+    }
+    
+    /// 缩放图片 图像的宽度和高度都大于等于目标尺寸，才进行缩放
+    public func app_internalScaled(newSize: CGSize) -> UIImage? {
+        let width = self.size.width
+        let height = self.size.height
+        let newSizeWidth = newSize.width
+        let newSizeHeight = newSize.height
+        
+        // 如果图像的宽度和高度都小于等于目标尺寸，则直接返回原始图像
+        if width <= newSizeWidth && height <= newSizeHeight {
+            return self
+        }
+        
+        // 如果图像的宽度、高度或目标尺寸的宽度、高度为0，则直接返回原始图像
+        if width == 0 || height == 0 || newSizeWidth == 0 || newSizeHeight == 0 {
+            return self
+        }
+        
+        var size: CGSize
+        // 根据图像的宽高比和目标尺寸的宽高比，计算缩放后的大小
+        if width / height > newSizeWidth / newSizeHeight {
+            size = CGSize(width: newSizeWidth, height: newSizeWidth * height / width)
+        } else {
+            size = CGSize(width: newSizeHeight * width / height, height: newSizeHeight)
+        }
+        // 调用 app_drawImage 方法进行缩放，并返回缩放后的图像
+        return app_drawImage(size: size)
+    }
+
+    
+    // 缩放图片 只要宽和高任意一个比目标尺寸小就进行缩放
+    public func app_externalScaled(newSize: CGSize) -> UIImage? {
+        let width = self.size.width
+        let height = self.size.height
+        let newSizeWidth = newSize.width
+        let newSizeHeight = newSize.height
+        // 如果图像的宽度或高度小于目标尺寸，则直接返回原始图像
+        if width < newSizeWidth || height < newSizeHeight {
+            return self
+        }
+        // 如果图像的宽度或高度为0，则直接返回原始图像
+        if width == 0 || height == 0 {
+            return self
+        }
+        var size: CGSize
+        // 根据图像的宽高比和目标尺寸的宽高比，计算缩放后的大小
+        if width / height > newSizeWidth / newSizeHeight {
+            size = CGSize(width: newSizeHeight * width / height, height: newSizeHeight)
+        } else {
+            size = CGSize(width: newSizeWidth, height: newSizeWidth * height / width)
+        }
+        return app_drawImage(size: size)
+    }
+    
+    /// 图像绘制到指定大小的画布上
+    public func app_drawImage(size: CGSize) -> UIImage? {
+        let drawSize = CGSize(width: floor(size.width), height: floor(size.height))
+        UIGraphicsBeginImageContextWithOptions(drawSize, false, self.scale)
+        defer { UIGraphicsEndImageContext() }
+        self.draw(in: CGRect(x: 0, y: 0, width: drawSize.width, height: drawSize.height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        return newImage
+    }
+    
+    // 缩放图片并返回
+    public func imageByScaling(to targetSize: CGSize) -> UIImage? {
+        
+        UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.main.scale)
+        defer { UIGraphicsEndImageContext() }
+        self.draw(in: CGRect(origin: .zero, size: targetSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+
+    
+    /// 从原始图像中裁剪出指定区域的子图
+    public func image(at rect: CGRect) -> UIImage? {
+        guard let croppedCGImage = cgImage?.cropping(to: rect) else { return nil }
+        return UIImage(cgImage: croppedCGImage)
+    }
+
+    
+    /// 裁剪指定区域
+    public func cropped(to rect: CGRect) -> UIImage {
+        UIGraphicsBeginImageContext(rect.size)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return self
+        }
+        context.translateBy(x: -rect.minX, y: -rect.minY)
+        self.draw(at: .zero)
+        if let croppedImage = UIGraphicsGetImageFromCurrentImageContext() {
+            return croppedImage
+        } else {
+            return self
+        }
+    }
+    
     //裁剪图片
     public func croppedImage(_ bound: CGRect) -> UIImage? {
         guard self.size.width > bound.origin.x else {
