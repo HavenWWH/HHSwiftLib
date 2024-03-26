@@ -798,4 +798,38 @@ public extension UIImage {
         return newImage
     }
     
+    
+    /// 图像是否具有 Alpha 通道
+    func hasAlphaChannel() -> Bool {
+        guard let alphaInfo = cgImage?.alphaInfo else {
+            return false
+        }
+        
+        if alphaInfo == .premultipliedLast {
+            if let colorSpace = cgImage?.colorSpace,
+               let spaceName = colorSpace.name {
+                let hasAlphaChannel = spaceName != CGColorSpace.displayP3
+                return hasAlphaChannel
+            }
+            return true
+        }
+        
+        return alphaInfo == .first ||
+               alphaInfo == .last ||
+               alphaInfo == .premultipliedFirst
+    }
+
+}
+
+
+public extension UIImage {
+    
+    // MARK:  图片转Data
+    func imageToData() -> Data? {
+        if self.hasAlphaChannel() {
+            return self.pngData()
+        } else {
+            return self.jpegData(compressionQuality: 1)
+        }
+    }
 }
