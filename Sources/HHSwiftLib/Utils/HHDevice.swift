@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 /// 判断是否iphoneX 带刘海
 public func IsBangs_iPhone() -> Bool {
-    return BottomHomeHeight > 0
+    return BottomHomeHeight() > 0
 }
 
 /// 是否是X以上
 public var isX: Bool {
-    return BottomHomeHeight > 0
+    return BottomHomeHeight() > 0
 }
 
 ///判断是否iPad
