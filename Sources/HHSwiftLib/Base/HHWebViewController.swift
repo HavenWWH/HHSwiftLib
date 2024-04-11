@@ -73,6 +73,8 @@ open class HHWebViewController:
                 self.hh_toLastViewController(animated: true)
             }
         }
+        
+        view.backgroundColor = .white
     }
     
 
@@ -292,9 +294,16 @@ open class HHWebViewController:
         
         if let re = request {
             webView.load(re)
-        }else if let url = urlString, let realURL = URL(string: url) {
-            webView.load(URLRequest(url: realURL))
+        } else if let url = urlString {
+            if url.hasPrefix("http://") || url.hasPrefix("https://") {
+                if let realURL = URL(string: url) {
+                    webView.load(URLRequest(url: realURL))
+                }
+            } else {
+                webView.loadHTMLString(url, baseURL: nil)
+            }
         }
+        
     }
     
     // MARK: - 方法
