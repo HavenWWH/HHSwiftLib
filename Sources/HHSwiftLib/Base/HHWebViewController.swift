@@ -397,6 +397,7 @@ open class HHWebViewController:
         webView.scrollView.delegate = self
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.contentInsetAdjustmentBehavior = .never
+        webView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: BottomHomeHeight(), right: 0)
         if #available(iOS 13.0, *){
             webView.scrollView.automaticallyAdjustsScrollIndicatorInsets = false
         }
