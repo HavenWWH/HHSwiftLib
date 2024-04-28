@@ -20,7 +20,7 @@ public extension Dictionary {
     func toArray<V>(_ map: (Key, Value) -> V) -> [V] {
         return self.map(map)
     }
-    
+
     // json字符串转字典
     static func jsonToDictionary(json: String) -> Dictionary<String, Any>? {
         if let data = (try? JSONSerialization.jsonObject(

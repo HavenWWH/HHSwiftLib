@@ -302,3 +302,24 @@ public extension UIView {
         layer.mask = shape
     }
 }
+
+// MARK: 动画
+public extension UIView {
+    
+    func addRotateAnimation(withDuration duration: TimeInterval, repeatCount: Float) {
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = NSNumber(value: Double.pi * 2)
+        rotationAnimation.duration = duration
+        rotationAnimation.isCumulative = true
+        rotationAnimation.repeatCount = repeatCount
+        self.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    func removeRotateAnimation() {
+        self.layer.removeAnimation(forKey: "rotationAnimation")
+    }
+    
+}
+
+
+

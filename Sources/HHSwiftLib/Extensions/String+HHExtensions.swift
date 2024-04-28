@@ -486,6 +486,24 @@ extension String {
         return ceil((self as NSString).boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attrib, context: nil).height)
     }
     
+    /// Returns hight of rendered string
+    /// 字符串在给定高度下的宽度
+    public func width(_ height: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?, lineSpace: CGFloat?) -> CGFloat {
+        var attrib: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
+        if lineBreakMode != nil || lineSpace != nil {
+            let paragraphStyle = NSMutableParagraphStyle()
+            if let lineBreakMode = lineBreakMode {
+                paragraphStyle.lineBreakMode = lineBreakMode
+            }
+            if let lineSpace = lineSpace {
+                paragraphStyle.lineSpacing = lineSpace
+            }
+            attrib.updateValue(paragraphStyle, forKey: NSAttributedString.Key.paragraphStyle)
+        }
+        let size = CGSize(width:  CGFloat(Double.greatestFiniteMagnitude), height:height)
+        return ceil((self as NSString).boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attrib, context: nil).width)
+    }
+    
     #endif
     
     #if os(iOS) || os(tvOS)
@@ -612,5 +630,23 @@ public extension String {
     /// 本地化
     func app_localizable() -> Self {
         return NSLocalizedString(self, comment: "")
+    }
+}
+
+
+public extension String {
+    
+    func toJsonArray() -> [String]?   {
+        
+        if let jsonData = self.data(using: .utf8) {
+            do {
+                if let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String] {
+                    return jsonArray
+                }
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+        return nil
     }
 }
