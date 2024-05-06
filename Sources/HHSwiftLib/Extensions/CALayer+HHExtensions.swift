@@ -105,6 +105,16 @@ public extension CALayer {
         self.addSublayer(gradientLayer)
     }
 
+    func snapShotImage() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 1.0)
+        defer { UIGraphicsEndImageContext() }
+        
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        
+        self.render(in: context)
+        
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }
 
 public extension CACornerMask {
