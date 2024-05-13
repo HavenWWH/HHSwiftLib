@@ -833,3 +833,34 @@ public extension UIImage {
         }
     }
 }
+
+
+// MARK:  水印
+public extension UIImage {
+    
+    // 传入图片 设置为居中底部的水印
+    func addWatermark(image: UIImage) -> UIImage? {
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        
+        draw(in: CGRect(origin: .zero, size: size))
+        
+        // 计算水印图片的大小
+        let waterW = size.width * 0.27
+        let watermarkSize = CGSize(width: waterW, height: waterW * image.size.height / image.size.width)
+        // 计算水印图片的位置
+        let watermarkRect = CGRect(x: (size.width - watermarkSize.width) / 2,
+                                   y: size.height - watermarkSize.height - 20,
+                                   width: watermarkSize.width,
+                                   height: watermarkSize.height)
+
+        
+        image.draw(in: watermarkRect)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+
+}
