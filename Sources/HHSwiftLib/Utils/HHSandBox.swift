@@ -224,7 +224,7 @@ public class HHSandBox {
         return createCacheFile(folderName: nil, fileName: fileName, data: data)
     }
     
-    /// 在沙盒cache目录下指定子文件夹内创建文案
+    /// 在沙盒cache目录下指定子文件夹内创建文件
     /// - Parameters:
     ///   - folderName: 子文件夹名字
     ///   - fileName: 文件名字

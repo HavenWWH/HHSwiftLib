@@ -306,7 +306,58 @@ public extension UIButton {
 @available(iOS 14.0, *)
 public extension UIControl {
     func addAction(for event: UIControl.Event, handler: @escaping UIActionHandler) {
-            addAction(UIAction(handler:handler), for:event)
+        addAction(UIAction(handler:handler), for:event)
     }
 }
 
+
+
+// MARK: 防重复点击按钮
+public class NonRepeatButton: UIButton {
+
+    private var isIgnoreAction: Bool = false
+    
+    private func preventRepeatedPresses(inTimeInterval interval: TimeInterval = 1.0) {
+        isIgnoreAction = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
+            self.isIgnoreAction = false
+        }
+    }
+    
+    public override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
+        guard !isIgnoreAction else { return }
+        preventRepeatedPresses()
+        super.sendAction(action, to: target, for: event)
+    }
+}
+
+private var lastClickTimeKey: UInt8 = 0
+private let clickInterval: TimeInterval = 1.0
+private var ButtonActionKey: UInt8 = 1
+
+public extension UIButton {
+    
+    private var lastClickTime: TimeInterval {
+        get {
+            return objc_getAssociatedObject(self, &lastClickTimeKey) as? TimeInterval ?? 0
+        }
+        set {
+            objc_setAssociatedObject(self, &lastClickTimeKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    func addAction(for controlEvents: UIControl.Event = .touchUpInside, action: @escaping () -> Void) {
+        self.addTarget(self, action: #selector(handleAction), for: controlEvents)
+        objc_setAssociatedObject(self, &ButtonActionKey, action, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    
+    @objc private func handleAction() {
+        let currentTime = Date().timeIntervalSince1970
+        if currentTime - lastClickTime >= clickInterval {
+            lastClickTime = currentTime
+            if let action = objc_getAssociatedObject(self,  &ButtonActionKey) as? () -> Void {
+                action()
+            }
+        }
+    }
+}
