@@ -312,6 +312,7 @@ public extension UIView {
         rotationAnimation.duration = duration
         rotationAnimation.isCumulative = true
         rotationAnimation.repeatCount = repeatCount
+        rotationAnimation.isRemovedOnCompletion = false
         self.layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
