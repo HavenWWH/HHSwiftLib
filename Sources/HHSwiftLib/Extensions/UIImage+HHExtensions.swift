@@ -163,7 +163,7 @@ extension UIImage {
         let data = cfData as Data
         let pixels = [UInt8](data)
         
-        let threshold: Int = 10 // 定义一个灰度阈值
+        let threshold: Int = 5 // 定义一个灰度阈值
         var isBW = true
         
         for i in stride(from: 0, to: data.count, by: 4) {

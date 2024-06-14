@@ -650,3 +650,23 @@ public extension String {
         return nil
     }
 }
+
+
+public extension String {
+    
+    // 秒转 hms
+    static func formatTime(seconds: Int) -> String {
+        let hours = seconds / 3600
+        let minutes = (seconds % 3600) / 60
+        let remainingSeconds = seconds % 60
+        
+        if hours > 0 {
+            return String(format: "%02dh%02dm", hours, minutes)
+        } else if minutes > 0 {
+            return String(format: "%02dh%02dm", minutes, remainingSeconds)
+        } else {
+            return String(format: "%02ds", remainingSeconds)
+        }
+    }
+}
+
