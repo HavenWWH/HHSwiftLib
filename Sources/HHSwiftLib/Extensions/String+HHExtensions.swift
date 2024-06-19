@@ -663,7 +663,7 @@ public extension String {
         if hours > 0 {
             return String(format: "%02dh%02dm", hours, minutes)
         } else if minutes > 0 {
-            return String(format: "%02dh%02dm", minutes, remainingSeconds)
+            return String(format: "%02dm%02ds", minutes, remainingSeconds)
         } else {
             return String(format: "%02ds", remainingSeconds)
         }

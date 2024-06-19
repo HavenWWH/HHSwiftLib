@@ -29,12 +29,43 @@ extension UIImage {
         guard let context = UIGraphicsGetCurrentContext() else{return UIImage()}
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         ///设置渐变颜色
-       let gradientRef = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0.0, 0.5, 1.0])!
+        let gradientRef = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0.0, 0.5, 1.0])!
         let startPoint = CGPoint(x: 0, y: size.height / 2) // 从左侧开始
         let endPoint = CGPoint(x: size.width, y: size.height / 2) // 到右侧结束
         context.drawLinearGradient(gradientRef, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(arrayLiteral: .drawsBeforeStartLocation,.drawsAfterEndLocation))
         let gradientImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        return gradientImage ?? UIImage()
+    }
+    // 从左到右的渐变色图片
+    public class func getGradientImage(size: CGSize, colors: [CGColor], locations: [CGFloat]? = nil) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        defer { UIGraphicsEndImageContext() }
+        
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return UIImage()
+        }
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        // 如果没有指定位置，则创建默认的位置
+        var gradientLocations: [CGFloat]
+        if let locations = locations, locations.count == colors.count {
+            gradientLocations = locations
+        } else {
+            gradientLocations = stride(from: 0.0, through: 1.0, by: 1.0 / Double(colors.count - 1)).map { CGFloat($0) }
+        }
+        
+        guard let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: gradientLocations) else {
+            return UIImage()
+        }
+        
+        let startPoint = CGPoint(x: 0, y: size.height / 2)
+        let endPoint = CGPoint(x: size.width, y: size.height / 2)
+        
+        context.drawLinearGradient(gradient, start: startPoint, end: endPoint, options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        
+        let gradientImage = UIGraphicsGetImageFromCurrentImageContext()
         return gradientImage ?? UIImage()
     }
 
