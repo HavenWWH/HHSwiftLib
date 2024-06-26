@@ -361,3 +361,35 @@ public extension UIButton {
         }
     }
 }
+
+// 属性用于设置扩展的点击区域
+private var hitTestEdgeInsetsKey: UInt8 = 0
+
+extension UIButton {
+    
+    public var hitTestEdgeInsets: UIEdgeInsets? {
+        get {
+            return objc_getAssociatedObject(self, &hitTestEdgeInsetsKey) as? UIEdgeInsets
+        }
+        set {
+            objc_setAssociatedObject(self, &hitTestEdgeInsetsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    // 重写 point(inside:with:) 方法来扩展按钮的点击区域
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        guard let insets = hitTestEdgeInsets, isEnabled, !isHidden else {
+            return super.point(inside: point, with: event)
+        }
+        let relativeFrame = bounds
+        let hitFrame = relativeFrame.inset(by: insets.inverted())
+        return hitFrame.contains(point)
+    }
+}
+
+private extension UIEdgeInsets {
+    // 扩展 UIEdgeInsets 来计算反向的内边距（即正值变负值，负值变正值）
+    func inverted() -> UIEdgeInsets {
+        return UIEdgeInsets(top: -top, left: -left, bottom: -bottom, right: -right)
+    }
+}
