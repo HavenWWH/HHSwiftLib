@@ -895,3 +895,23 @@ public extension UIImage {
     }
 
 }
+
+public extension UIImage {
+    // 图片透明度
+    public func withAlpha(_ alpha: CGFloat) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext(), let cgImage = self.cgImage else { return nil }
+        
+        let rect = CGRect(origin: .zero, size: size)
+        context.scaleBy(x: 1.0, y: -1.0)
+        context.translateBy(x: 0.0, y: -rect.size.height)
+        context.setBlendMode(.multiply)
+        context.setAlpha(alpha)
+        context.draw(cgImage, in: rect)
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+}
