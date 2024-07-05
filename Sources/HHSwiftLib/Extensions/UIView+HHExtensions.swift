@@ -338,3 +338,63 @@ public class ClickGuard {
         }
     }
 }
+
+
+// 带箭头气泡控件
+public class BubbleView: UIView {
+    
+    public var arrowSize: CGFloat = 10
+    var cornerRadius: CGFloat = 10
+    var bubbleColor: UIColor = .white
+    var borderColor: UIColor = .systemGray
+    var borderWidth: CGFloat = 0
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        let bubblePath = UIBezierPath()
+        
+        // Draw bubble with arrow pointing downwards
+        bubblePath.move(to: CGPoint(x: cornerRadius, y: 0))
+        bubblePath.addLine(to: CGPoint(x: rect.width - cornerRadius, y: 0))
+        bubblePath.addArc(withCenter: CGPoint(x: rect.width - cornerRadius, y: cornerRadius),
+                          radius: cornerRadius,
+                          startAngle: CGFloat(3 * Double.pi / 2),
+                          endAngle: 0,
+                          clockwise: true)
+        bubblePath.addLine(to: CGPoint(x: rect.width, y: rect.height - arrowSize - cornerRadius))
+        bubblePath.addArc(withCenter: CGPoint(x: rect.width - cornerRadius, y: rect.height - arrowSize - cornerRadius),
+                          radius: cornerRadius,
+                          startAngle: 0,
+                          endAngle: CGFloat(Double.pi / 2),
+                          clockwise: true)
+        bubblePath.addLine(to: CGPoint(x: rect.width / 2 + arrowSize, y: rect.height - arrowSize))
+        bubblePath.addLine(to: CGPoint(x: rect.width / 2, y: rect.height))
+        bubblePath.addLine(to: CGPoint(x: rect.width / 2 - arrowSize, y: rect.height - arrowSize))
+        bubblePath.addLine(to: CGPoint(x: cornerRadius, y: rect.height - arrowSize))
+        bubblePath.addArc(withCenter: CGPoint(x: cornerRadius, y: rect.height - arrowSize - cornerRadius),
+                          radius: cornerRadius,
+                          startAngle: CGFloat(Double.pi / 2),
+                          endAngle: CGFloat(Double.pi),
+                          clockwise: true)
+        bubblePath.addLine(to: CGPoint(x: 0, y: cornerRadius))
+        bubblePath.addArc(withCenter: CGPoint(x: cornerRadius, y: cornerRadius),
+                          radius: cornerRadius,
+                          startAngle: CGFloat(Double.pi),
+                          endAngle: CGFloat(3 * Double.pi / 2),
+                          clockwise: true)
+        
+        bubbleColor.setFill()
+        borderColor.setStroke()
+        bubblePath.fill()
+        bubblePath.lineWidth = borderWidth
+        bubblePath.stroke()
+    }
+}
