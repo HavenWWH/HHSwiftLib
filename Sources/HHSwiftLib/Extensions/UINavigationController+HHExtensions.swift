@@ -18,6 +18,20 @@ public class SwizzleNavBar {
 }
 
 public extension UIViewController {
+    
+    func removeCurrentVcFromNavigationControlle() {
+        if let nav = self.navigationController {
+            if let index = nav.viewControllers.firstIndex(of: self) {
+                var newViewControllers = nav.viewControllers
+                newViewControllers.remove(at: index)
+                nav.setViewControllers(newViewControllers, animated: true)
+            }
+
+        }
+    }
+}
+
+public extension UIViewController {
  
     private struct Associated {
         static var WillAppearInject: String = "WillAppearInject"
