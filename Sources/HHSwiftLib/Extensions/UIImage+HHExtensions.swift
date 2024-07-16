@@ -571,6 +571,8 @@ public enum gradientColorDirection {
     case top2Bottom
     /// 从左上角到右下角
     case leftTop2RightBottom
+    /// 从左下角到右上角
+    case leftBottom2RightTop
 }
 
 public extension UIImage {
@@ -601,6 +603,9 @@ public extension UIImage {
             case .leftTop2RightBottom:
                 gradientLayer.startPoint = CGPoint(x: 0, y: 0)
                 gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+            case .leftBottom2RightTop:
+                gradientLayer.startPoint = CGPoint(x: 1, y: 0)
+                gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         }
         
         UIGraphicsBeginImageContextWithOptions(gradientLayer.bounds.size, gradientLayer.isOpaque, 0.0)
