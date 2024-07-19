@@ -349,8 +349,9 @@ public class BubbleView: UIView {
     var borderColor: UIColor = .systemGray
     var borderWidth: CGFloat = 0
     
-    override init(frame: CGRect) {
+    public init(frame: CGRect, cRadius: CGFloat = 10.0 ) {
         super.init(frame: frame)
+        self.cornerRadius = cRadius
         backgroundColor = .clear
     }
     
