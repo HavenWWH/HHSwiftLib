@@ -670,3 +670,15 @@ public extension String {
     }
 }
 
+
+public extension String {
+    func baseURLWithPath() -> String {
+        guard let url = URL(string: self) else {
+            return self
+        }
+        if let host = url.host {
+            return url.scheme.flatMap { "\($0)://\(host)\(url.path)" } ?? self
+        }
+        return url.absoluteString
+    }
+}
