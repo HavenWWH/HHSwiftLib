@@ -326,7 +326,7 @@ public extension UIView {
 // 防重复点击
 public class ClickGuard {
     private static var lastClickTime: TimeInterval = 0
-    private static let clickInterval: TimeInterval = 1.5  // 设置点击间隔为2秒
+    private static let clickInterval: TimeInterval = 0.8
 
     public static func canClick() -> Bool {
         let currentTime = Date().timeIntervalSince1970
